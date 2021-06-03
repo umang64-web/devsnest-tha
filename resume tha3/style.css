@@ -1,0 +1,167 @@
+*{
+    border-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(173, 209, 219);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+}
+
+.container{
+    position: relative;
+    border: 1px solid #000000; 
+    margin: 50px;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background-color: rgb(236, 244, 245);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0,0, 0, 1);
+}
+.left{
+    position: relative;
+    background: #003147;
+    padding: 40px;   
+}
+.right{
+    position: relative;
+    background: #fff;
+    padding: 40px;   
+}
+.profile{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+ .profile .image{
+    position: relative;
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+ img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile h2{
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+
+}
+.profile  h2 span{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.contact{
+    padding-top: 40px;
+}
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing:1px;
+    margin-bottom: 20px;
+}
+.contact ul{
+    position: relative;
+}
+.contact ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.contact ul li span{
+    color: #fff;
+    font-weight: 300;
+}
+.contact.edu li{
+    margin-bottom:15px ;
+
+}
+.contact.edu h5{
+    color: #03a9f4;
+    font-weight: 500;
+}
+.contact.edu h4:nth-child(2){
+    color: #fff;
+    font-weight: 500;
+    
+}
+.contact.edu h4{
+
+    color: #fff;
+    font-weight: 300;
+    
+}
+.contact.skills .perc{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display:block ;
+    margin-top: 5px;
+}
+.contact.skills .perc div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    background: #03a9f4;
+}
+.contact.skills .title{
+    color: #081921;
+}
+.contact.skills .text{
+    color: #081921;
+}
+
+
+.about{
+    margin-bottom: 50px;
+}
+.about:last-child {
+    margin-bottom: 0;
+
+}
+.title2{
+    color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+p{
+    color: ;
+}
+.comp{
+    margin-bottom: 7px;
+    color: #03a9f4;
+}
+.interest ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.interest ul li{
+    list-style: none;
+    font-weight: 500;
+    margin: 10px 0;
+    color: #333;
+}
