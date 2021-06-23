@@ -44,6 +44,7 @@ function disableCards() {
     //its a match
     scores++;
     display();
+    
     firstCard.removeEventListener('click', flipcard);
     secondCard.removeEventListener('click', flipcard);
     // console.log('Function was executed!')

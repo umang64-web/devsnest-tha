@@ -5,11 +5,21 @@
 }
 body{
     min-height: 100vh;
-    display: flex;
-    background: rgb(0, 0, 0);
+    /* display: flex; */
     /* background: url(lol.png); */
     /* background-repeat: no-repeat; */
+    background: url(images/emoji.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
+@font-face {
+    font-family:DJB-font ;
+    src: url('DJB Sticky Tape Labels Spaced.ttf');
+}
+
+
 
 .memorygame{
     width: 750px;
@@ -19,6 +29,7 @@ body{
     justify-content: flex-start;
     flex-wrap: wrap;
     perspective: 1000px;
+    box-shadow: 0px 35px 55px rgba(0,0, 0,1)
    
 
 }
@@ -32,12 +43,16 @@ body{
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 0px 10px 30px rgb(128, 78, 12);
+    box-shadow: 0px 10px 30px rgb(212, 214, 53);
+    visibility:initial;
 
 }
 .memory-card:active{
     transform: scale(.97);
     transition: transform .2s;
+}
+.memory-card:hover{
+    transform: scale(1.1);
 }
 .memory-card.flip{
     transform: rotateY(180deg);
@@ -48,13 +63,24 @@ body{
     width: 100%;
     height: 100%;
     object-fit:fill;
-    background: rgb(241, 174, 128);
+    /* background: rgb(241, 174, 128); */
     backface-visibility: hidden;
+    border: 1px solid yellow;
+    
 }
 .front-face{
     transform: rotateY(180deg);
+    
 }
 .count{
-    color:white;
+    color:black;
     font-weight: 500;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+h1{
+    border: 1px solid rgb(26, 24, 14);
+    background-color: rgb(255, 196, 0);
+    font-family: DJB-font;
 }
