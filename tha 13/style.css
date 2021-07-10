@@ -1,0 +1,96 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    overflow: hidden;
+    background-color: rgb(188, 229, 253);
+    background: url('meme-feature.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    
+
+    
+  
+    color: #fff;
+    
+}
+#memeBtn{
+    background: #fff;
+    color: black;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 8px;
+    padding: 5px;
+    transition: 250ms;
+    /* height: 20px; */
+    text-align: center;
+    background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
+    background-size: 600% 100%;
+    animation: gradient 1s linear infinite;
+    animation-direction: alternate;
+
+}
+
+#memeBtn:hover{
+    transform: scale(1.2);
+   
+
+    
+}
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
+
+#memes{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow: scroll;
+    width: 100%;
+    padding: 10px;
+    margin-left: 10PX;
+    margin-right: 0px;
+
+
+    background: rgba(2, 90, 148, 0.5);
+    box-shadow: 0 18px 32px 0 rgba(9, 16, 88, 0.37);
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+    #memes div{
+        margin: 10px;
+        padding: 5px;
+        border-radius: 8px;
+        height: auto;
+        width: 250px;
+    }
+    #memes div h4{
+        padding: 5px;
+        text-align: center;
+        background: none;
+        color: #fff;
+        border-radius: 8px;
+        margin: 0;
+    }
+
+img{
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+    transition: 200ms;
+
+   
+    
+}
+img:hover{
+    border-radius: 8px;
+    transform: scale(1.2);
+}
+
