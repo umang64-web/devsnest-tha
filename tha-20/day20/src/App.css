@@ -1,0 +1,71 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-radius: 15px;
+  background: #f5f4f4;
+}
+.App{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow-x: auto;
+  /* border-radius: 15px;
+background: #f5f4f4;
+box-shadow: inset 10px 10px 29px #bab9b9,
+inset -10px -10px 29px #ffffff; */
+background: linear-gradient(145deg, #9BA0AA, #FFFFFF);
+border-radius: 2%;
+box-shadow: inset 3.6px 3.6px 16px #676B72, inset -3.6px -3.6px 16px #FFFFFF;}
+.App::-webkit-scrollbar{width:10px}
+.App::-webkit-scrollbar-track{background:#fcfcfd;border-radius:25px}
+.App::-webkit-scrollbar-thumb{background:#cfe2f7;border-radius:16px}
+
+.card{
+  background-color: rgb(247, 228, 228);
+  border: 2px solid black;
+  margin: 10px;
+  width: 350px;
+  display: flex;
+  padding: 15px 20px 5px;
+  justify-content: space-between;
+  border-radius: 15px;
+background: #f5f4f4;
+box-shadow: inset 10px 10px 29px #bab9b9,
+            inset -10px -10px 29px #ffffff;
+  
+}
+
+.card .text h1{
+  display: inline-block;
+  width: 200px;
+  height: 52px;
+  position: relative;
+  font-family: Tahoma, sans-serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.795);
+
+}
+.card .text p{
+  font-weight: 100;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  color: #777373;
+}
+.dlt{
+  display: inline-block;
+  padding-top: 10px;
+}
+.dlt button{
+  padding: 2px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+

@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board{
+  border: 20px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+}
+.row{
+  display: flex;
+}
+
+.boxw,
+.boxb {
+  height: 40px;
+  width: 40px;
+}
+
+.boxb {
+  background-color: rgb(0, 0, 0);
+}
