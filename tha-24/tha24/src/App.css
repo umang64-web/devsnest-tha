@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica";
+}
+
+body {
+  background-color: rgb(201, 201, 201);
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: black;
+}
+
+.navbar div {
+  padding: 15px;
+  width: 300px;
+  text-align: center;
+  transition: all 500ms ease-out;
+}
+.navbar div:hover {
+  transition: all 500ms ease-out;
+  background-color: green;
+}
+
+.link {
+  text-decoration: none;
+  padding: 11px 60px;
+  width: 100%;
+}
+.link:visited {
+  color: white;
+}
+
+.home,
+.about,
+.profile,
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 100px;
+}
+
+button{
+    margin-top: 50px;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    background-color: black;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: 0 0 5px 1px rgb(46, 46, 46);
+}
