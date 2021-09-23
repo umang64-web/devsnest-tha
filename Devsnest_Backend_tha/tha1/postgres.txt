@@ -1,0 +1,53 @@
+prakhar_08@LAPTOP-974EOMLD:~$ sudo -u postgres psql
+psql (12.8 (Ubuntu 12.8-0ubuntu0.20.04.1))
+Type "help" for help.
+
+postgres=# CREATE DATABASE info;
+WARNING:  could not flush dirty data: Function not implemented
+CREATE DATABASE
+postgres=# \l
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges
+-----------+----------+----------+---------+---------+-----------------------
+ info      | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c info
+You are now connected to database "info" as user "postgres".
+info=# CREATE TABLE COMPANY(
+info(# ID INT NOT NULL,
+info(# NAME CHAR[50],
+info(# AGE INT,
+info(# ADRESS TEXT
+info(# );
+CREATE TABLE
+info=# \d company
+                  Table "public.company"
+ Column |      Type      | Collation | Nullable | Default
+--------+----------------+-----------+----------+---------
+ id     | integer        |           | not null |
+ name   | character(1)[] |           |          |
+ age    | integer        |           |          |
+ adress | text           |           |          |
+
+info=# \c postgres
+You are now connected to database "postgres" as user "postgres".
+postgres=# DROP DATABASE info;
+DROP DATABASE
+postgres=# \l
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges
+-----------+----------+----------+---------+---------+-----------------------
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(3 rows)
+
+postgres=# \q

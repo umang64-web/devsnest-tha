@@ -1,0 +1,146 @@
+prakhar_08@LAPTOP-974EOMLD:~$ sudo -u postgres psql
+[sudo] password for prakhar_08:
+psql (12.8 (Ubuntu 12.8-0ubuntu0.20.04.1))
+Type "help" for help.
+
+postgres=# CREATE DATABASE info;
+WARNING:  could not flush dirty data: Function not implemented
+CREATE DATABASE
+postgres=# \l
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges
+-----------+----------+----------+---------+---------+-----------------------
+ info      | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c info;
+You are now connected to database "info" as user "postgres".
+info=# CREATE TABLE COMPANY(
+info(# ID INT PRIMARY KEY NOT NULL,
+info(# NAME TEXT NOT NULL,
+info(# AGE INT NOT NULL,
+info(# ADDRESS CHAR(50),
+info(# SALARY REAL,
+info(# JOINING DATE);
+info=# INSERT INTO COMPANY(ID, NAME, AGE, ADDRESS, SALARY, JOINING) VALUES (1, 'Prakhar', '21', 'India', 25000.00, '2001-07-13');
+INSERT 0 1
+info=# INSERT INTO COMPANY(ID, NAME, AGE, ADDRESS, SALARY, JOINING) VALUES (2, 'Rohan', '24', 'America', 35000.00, '2002-07-15');
+INSERT 0 1
+info=# INSERT INTO COMPANY(ID, NAME, AGE, ADDRESS, SALARY, JOINING) VALUES (3, 'Meena', '27', 'Australia', 65000.00, '2012-09-19');
+INSERT 0 1
+info=# SELECT * FROM COMPANY;
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  1 | Prakhar |  21 | India                                              |  25000 | 2001-07-13
+  2 | Rohan   |  24 | America                                            |  35000 | 2002-07-15
+  3 | Meena   |  27 | Australia                                          |  65000 | 2012-09-19
+(3 rows)
+
+info=# SELECT COUNT(*) AS "RECORDS" FROM COMPANY;
+ RECORDS
+---------
+       3
+(1 row)
+
+info=# SELECT CURRENT_TIMESTAMP;
+        current_timestamp
+----------------------------------
+ 2021-09-16 19:04:54.294261+05:30
+(1 row)
+
+info=# SELECT (15+3) AS ADDITION;
+ addition
+----------
+       18
+(1 row)
+
+info=# SELECT (15*3) AS MULTIPLICATION;
+ multiplication
+----------------
+             45
+(1 row)
+
+info=# SELECT * FROM COMPANY WHERE AGE > 21 AND SALARY <= 50000.00;
+ id | name  | age |                      address                       | salary |  joining
+----+-------+-----+----------------------------------------------------+--------+------------
+  2 | Rohan |  24 | America                                            |  35000 | 2002-07-15
+(1 row)
+
+info=# SELECT * FROM COMPANY WHERE AGE IS NOT NULL;
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  1 | Prakhar |  21 | India                                              |  25000 | 2001-07-13
+  2 | Rohan   |  24 | America                                            |  35000 | 2002-07-15
+  3 | Meena   |  27 | Australia                                          |  65000 | 2012-09-19
+(3 rows)
+
+info=# SELECT * FROM COMPANY WHERE NAME LIKE 'P%';
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  1 | Prakhar |  21 | India                                              |  25000 | 2001-07-13
+(1 row)
+
+info=# SELECT * FROM COMPANY WHERE NAME LIKE 'P_ak%';
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  1 | Prakhar |  21 | India                                              |  25000 | 2001-07-13
+(1 row)
+
+info=# SELECT * FROM COMPANY WHERE SALARY::TEXT LIKE '6%';
+ id | name  | age |                      address                       | salary |  joining
+----+-------+-----+----------------------------------------------------+--------+------------
+  3 | Meena |  27 | Australia                                          |  65000 | 2012-09-19
+(1 row)
+
+info=# SELECT * FROM COMPANY WHERE AGE BETWEEN 20 AND 25;
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  1 | Prakhar |  21 | India                                              |  25000 | 2001-07-13
+  2 | Rohan   |  24 | America                                            |  35000 | 2002-07-15
+(2 rows)
+
+info=# SELECT * FROM COMPANY WHERE AGE IN (20, 25);
+ id | name | age | address | salary | joining
+----+------+-----+---------+--------+---------
+(0 rows)
+
+info=# SELECT * FROM COMPANY WHERE AGE IN (20,27);
+ id | name  | age |                      address                       | salary |  joining
+----+-------+-----+----------------------------------------------------+--------+------------
+  3 | Meena |  27 | Australia                                          |  65000 | 2012-09-19
+(1 row)
+
+info=# SELECT * FROM COMPANY WHERE AGE IN (21,27);
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  1 | Prakhar |  21 | India                                              |  25000 | 2001-07-13
+  3 | Meena   |  27 | Australia                                          |  65000 | 2012-09-19
+(2 rows)
+
+info=# UPDATE COMPANY SET SALARY = 40000.00 WHERE ID = 1;
+UPDATE 1
+info=# SELECT * FROM COMPANY;
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  2 | Rohan   |  24 | America                                            |  35000 | 2002-07-15
+  3 | Meena   |  27 | Australia                                          |  65000 | 2012-09-19
+  1 | Prakhar |  21 | India                                              |  40000 | 2001-07-13
+(3 rows)
+
+info=# DELETE COMPANY WHERE ID = 3;
+ERROR:  syntax error at or near "COMPANY"
+LINE 1: DELETE COMPANY WHERE ID = 3;
+               ^
+info=# DELETE FROM COMPANY WHERE ID = 3;
+DELETE 1
+info=# SELECT * FROM COMPANY;
+ id |  name   | age |                      address                       | salary |  joining
+----+---------+-----+----------------------------------------------------+--------+------------
+  2 | Rohan   |  24 | America                                            |  35000 | 2002-07-15
+  1 | Prakhar |  21 | India                                              |  40000 | 2001-07-13
+(2 rows)

@@ -1,0 +1,25 @@
+{
+  "name": "backend_projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikita12112002/Devsnest_Backend.git"
+  },
+  "author": "Nikita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikita12112002/Devsnest_Backend/issues"
+  },
+  "homepage": "https://github.com/Nikita12112002/Devsnest_Backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
