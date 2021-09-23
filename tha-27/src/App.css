@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+li {
+  font-size: 1.5rem;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
